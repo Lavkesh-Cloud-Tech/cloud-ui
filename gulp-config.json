@@ -2,7 +2,7 @@
 
 	"bases" : {
 		 "angularModule" : "springCloudApp",
-		 "applicationPath" : "springCloud",
+		 "applicationPath" : "",
 		 "src": "app/",
 		 "appBuild": "build/",
 		 "distTemp": "build/distTemp/",		 

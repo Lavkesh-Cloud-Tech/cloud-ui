@@ -9,8 +9,7 @@
  * Main module of the application.
  */
 (function() {
-    'use strict';
-    var springCloudApp = angular.module('springCloudApp', ['ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 'ngSanitize', 
+    var springCloudApp = angular.module('springCloudApp', ['ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 'ngSanitize',
             'ngTouch', 'ngMaterial']);
 
 
@@ -25,7 +24,6 @@
               redirectTo: '/'
             });
     });
-
 })();
 
 
