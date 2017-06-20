@@ -7,7 +7,7 @@ set -e
 #     exit 1
 # fi
 
-# for f in /cloud-ui/template/app*.*.js; do sed 's@{{env}}@'"$RUN_ENV"'@' "$f" > /usr/share/nginx/html/cs/scripts/${f##*/}; done
+# for f in /cloud-ui/template/app*.*.js; do sed 's@{{env}}@'"$RUN_ENV"'@' "$f" > /usr/share/nginx/html/js/${f##*/}; done
 
 # Add nginx as command if needed
 if [[ "$1" == -* ]]; then
@@ -26,8 +26,7 @@ sed -i.bak "s|ACCESS_LOG|$ACCESS_LOG|g" /etc/nginx/nginx.conf
 # sed -i.bak "s|API_GATEWAY_URL|$API_GATEWAY_URL|g" /etc/nginx/nginx.conf
 
 DNS_SERVER=$(cat /etc/resolv.conf |grep -i nameserver|head -n1|cut -d ' ' -f2)
-sed -i.bak "s|DNS_SERVER|$DNS_SERVER|g" /etc/nginx/conf.d/default.conf
+sed -i.bak "s|DNS_SERVER|$DNS_SERVER|g" /etc/nginx/nginx.conf
 
 # echo "$RUN_ENV exec $@"
-# echo "exec API_GATEWAY_URL > $API_GATEWAY_URL proxying"
 exec "$@"
